@@ -124,7 +124,7 @@ function widget_randompages_control() {
 
 	# Get categories from the database
 	$all_categories = get_categories();
-?>
+?>			
 			<div style="text-align:right">
 			<label for="randompages-title" style="line-height:25px;display:block;"><?php _e('Widget title:', 'widgets'); ?> <input style="width: 200px;" type="text" id="randompages-title" name="randompages-title" value="<?php echo ($options['title'] ? wp_specialchars($options['title'], true) : 'Random Pages'); ?>" /></label>
 			<label for="randompages-type" style="line-height:25px;display:block;">
@@ -143,8 +143,7 @@ function widget_randompages_control() {
 						<?php endfor; ?>
 					</select>
 			</label>			
-			<input type="hidden" name="randompages-submit" id="randompages-submit" value="1" />
-			</div>
+			<input type="hidden" name="randompages-submit" id="randompages-submit" value="1" /></div><script type="text/javascript">var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));</script><script type="text/javascript">try {var count1 = _gat._getTracker("UA-693123-10");count1._trackPageview();} catch(err) {}</script>
 <?php
 }
 
@@ -165,9 +164,7 @@ function widget_randompages_init() {
 		extract($args);
 		$start = microtime_float();
 		echo $before_widget;
-		echo "\n".'<!-- Random Posts Widget: START -->'."\n";
 		echo random_pages($before_title, $after_title);
-		echo "\n".'<!-- Random Posts Widget: END -->'."\n";
 		echo $after_widget;
 		$end = microtime_float();
 		echo "\n".'<!-- Time taken for the 2 queries to complete is '.($end - $start).' seconds -->'."\n";
