@@ -12,6 +12,10 @@ This simple plugin is a widget that displays a list of random posts on your widg
 
 This is a widget that displays a list of random pages on your widgetized sidebar.
 
+<a href="http://www.barristerbookcases.info/10-Random-Pages.html?type=forum">Support Forum Coming Soon</a>
+
+
+
 == Installation ==
 
 1. Upload folder into to the `/wp-content/plugins/` directory
