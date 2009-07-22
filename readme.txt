@@ -1,7 +1,7 @@
 === Random Pages Widget ===
 Contributors: agbell
 Donate link: http://barristerbookcases.info/10-Random-Pages.html
-Tags: random, posts, random pages, widget
+Tags: widget,Post, posts, plugin, sidebar, links, page, random
 Requires at least: 2.1
 Tested up to: 2.8.1
 Stable tag: 1.01
