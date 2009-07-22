@@ -4,7 +4,7 @@ Donate link: http://barristerbookcases.info/10-Random-Pages.html
 Tags: random, posts, random pages, widget
 Requires at least: 2.1
 Tested up to: 2.8.1
-Stable tag: trunk
+Stable tag: 1.01
 
 This simple plugin is a widget that displays a list of random posts on your widgetized sidebar.
 
