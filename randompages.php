@@ -21,7 +21,7 @@ Plugin Name: 10 Random Pages widget
 Plugin URI: http://barristerbookcases.info/10-Random-Pages.html
 Description: Display Random Pages Widget.  Not Posts but Pages.  10 by default but configurable.
 Author: Adam Bell	
-Version: 1
+Version: 1.00
 Author URI: http://barristerbookcases.info/
 */
 
