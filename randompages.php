@@ -17,7 +17,7 @@
 */
 
 /*
-Plugin Name: 10 Random Pages widget
+Plugin Name: Random Pages widget
 Plugin URI: http://barristerbookcases.info/10-Random-Pages.html
 Description: Display Random Pages Widget.  Not Posts but Pages.  10 by default but configurable.
 Author: Adam Bell	
@@ -32,7 +32,8 @@ function random_pages($before,$after)
 	$title = $options['title'];
 	$list_type = $options['type'] ? $options['type'] : 'ul';
 	$numPosts = $options['count'];
-
+	if(is_null($v))
+		$numPosts = '10';
 	# Articles from database
 	$rand_articles	=	get_random_pages($numPosts);
 
@@ -64,16 +65,16 @@ function random_pages($before,$after)
 		$string_to_echo	.= '<a href="'.$rand_articles[$x]['permalink'].'">'.$rand_articles[$x]['title'].'</a>';
 		if (strlen($line_end) > 0) $string_to_echo .= $line_end;
 	}
+	$string_to_echo .= '<font size="-2">Get Plugin At <a href="http://www.barristerbookcases.info/10-Random-Pages.html">Barrister Bookcase</a></font>';
 	if (strlen($closing) > 0) $string_to_echo .= $closing;
 	return $string_to_echo;
 }
 
-function get_random_pages($numPosts = '10') {
+function get_random_pages($numPosts) {
 	global $wpdb, $wp_db_version;
 
 	$sql = "SELECT $wpdb->posts.ID FROM $wpdb->posts WHERE $wpdb->posts.post_status = 'publish' AND $wpdb->posts.post_type = 'page'";	
 	$the_ids = $wpdb->get_results($sql);
-
 	$luckyPosts = (array) array_rand($the_ids,($numPosts > count($the_ids) ? count($the_ids) : $numPosts));
 
 	$sql = "SELECT $wpdb->posts.post_title, $wpdb->posts.ID";
@@ -171,8 +172,8 @@ function widget_randompages_init() {
 	}
 
 	// Tell Dynamic Sidebar about our new widget and its control
-	register_sidebar_widget(array('10 Random Pages Widget', 'widgets'), 'widget_randompages');
-	register_widget_control(array('10 Random Pages Widget', 'widgets'), 'widget_randompages_control');
+	register_sidebar_widget(array('Random Pages Widget', 'widgets'), 'widget_randompages');
+	register_widget_control(array('Random Pages Widget', 'widgets'), 'widget_randompages_control');
 }
 
 // Delay plugin execution to ensure Dynamic Sidebar has a chance to load first
