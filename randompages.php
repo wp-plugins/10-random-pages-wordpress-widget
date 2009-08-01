@@ -21,7 +21,7 @@ Plugin Name: Random Pages widget
 Plugin URI: http://barristerbookcases.info/10-Random-Pages.html
 Description: Display Random Pages Widget.  Not Posts but Pages.  10 by default but configurable.
 Author: Adam Bell	
-Version: 1.01
+Version: 1.00
 Author URI: http://barristerbookcases.info/
 */
 
@@ -42,15 +42,15 @@ function random_pages($before,$after)
 
 	switch($list_type)
 	{
-		case "br":
-			$string_to_echo	.=	"<p>";
-			$line_end	=	"<br />\n";
-			$closing	=	"</p>\n";
-			break;
 		case "p":
 			$opening	=	"<p>";
 			$line_end	=	"</p>\n";
 			break;
+		case "br":
+			$string_to_echo	.=	"<p>";
+			$line_end	=	"<br />\n";
+			$closing	=	"</p>\n";
+			break;		
 		case "ul":
 		default:
 			$string_to_echo	.=	"<ul>\n";
@@ -153,6 +153,7 @@ function microtime_float()
 	list($usec, $sec) = explode(" ", microtime());
 	return ((float)$usec + (float)$sec);
 }
+
 
 function widget_randompages_init() {
 
