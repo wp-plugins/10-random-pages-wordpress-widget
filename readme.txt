@@ -1,11 +1,11 @@
-=== Random Pages Widget - For Vistors & SEO ===
+=== Random Pages Widget - For Visitors & SEO ===
 Contributors: agbell
 Tags: widget,widgets,wordpress,Post, posts, admin, plugin, sidebar, links, page, pages,random, sidebar,google,seo,list
 Requires at least: 2.1
 Tested up to: 2.8.1
 Stable tag: 1.00
 
-The widget displays random posts and pages in sidebar. This increases the number of indexed pages and gives users an interesting way to browse your site.
+Displays random posts and pages in sidebar. This increases the number of indexed pages and gives users an interesting way to browse your site.
 
 == Description ==
 
@@ -13,16 +13,29 @@ This is a widget that displays a list of random pages/posts on your widgetized s
 
 Benefits:
 
-* Get more pages of your site indexed
-by randomly spreading around links the chances a search engine spider fully index  your site greatly increases
-* Give visitors a fun way to browse your site
+* Give visitors a fun way to browse your site.
+* Get more pages of your site indexed.
+* By randomly spreading around links the chances a search engine spider fully index  your site greatly increases.
+* Increase traffic from the search engines due to having more pages indexed (see last point).
+* Discover new keyphrases that will drive huge traffic to you site.
 
 
-*Tip:* Find niches your blog should be covering
+**Tip:** Discovering new keyphrases for search engine traffic
+
+*Discover new keyphrases that will drive huge traffic to you site.*
+
 By using this plug-in in combination with Google analytics you may find you get significant traffic for a topic your blog doesn't cover due to the added keywords from this widget.  
 
-For example, your entry on "Making a Carrot Cake" may contain a random link to "Making Tomato Soup" when it is cached by google.  Due to this, you start receiving traffic for the search term "Tomato Soup Cake" because of the presence of all those words on your post at the time of caching.  You have just identified a high value keyword which will give you guaranteed traffic if developed into a full post.
+**For example**
 
+* Your entry on *"Making a Carrot Cake"* may contain a random link to *"Making Tomato Soup"* when it is cached by google.  
+* Due to this, you start receiving traffic for the search term "Tomato Soup Cake" because of the presence of all those words on your post at the time of caching.  
+* **You have just identified a high value keyword** which will give you guaranteed traffic if developed into a full post.
+* Since the links are random, the next time google caches the page it may find yet another keyphrase that drives traffic. Develop it into a post as well!
+
+**Questions, Comments and feature suggestions**
+
+Please leave questions and comments on my <a href="http://bed-and-bedroom.com/random-pages-widget/">plugin page</a>
 
 == Installation ==
 
