@@ -21,7 +21,7 @@ Plugin Name:Random Pages widget
 Plugin URI: http://bed-and-bedroom.com/random-pages-widget/
 Description: This is a widget that displays a list of random pages/posts on your widgetized sidebar.
 Author: Adam Bell	
-Version: 1.01
+Version: 1.02
 Author URI: http://bed-and-bedroom.com/
 */
 
@@ -169,7 +169,7 @@ function widget_randompages_control() {
 						<?php endfor; ?>
 					</select>
 			</label>			
-			<input type="hidden" name="randompages-submit" id="randompages-submit" value="1" /></div><script type="text/javascript">var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));</script><script type="text/javascript">try {var count1 = _gat._getTracker("UA-693123-10");count1._trackPageview();} catch(err) {}</script>
+			<input type="hidden" name="randompages-submit" id="randompages-submit" value="1" /></div>
 <?php
 }
 

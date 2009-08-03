@@ -39,6 +39,8 @@ For example, your entry on "Making a Carrot Cake" may contain a random link to "
 
 
 == Change Log ==
-1.**
+1.01
 * fixed Page count
 * added posts, pages or both configuration
+1.02
+* fixed hanging on draw widget
