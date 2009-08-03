@@ -5,7 +5,7 @@ Requires at least: 2.1
 Tested up to: 2.8.1
 Stable tag: 1.00
 
-This simple plugin is a widget that displays a list of random posts on your widgetized sidebar.
+This Simple plugin is a widget that displays a list of random posts on your widgetized sidebar.
 
 == Description ==
 
