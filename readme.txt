@@ -1,4 +1,4 @@
-=== Random Pages Widget ===
+=== || Random Pages Widget ||  ===
 Contributors: agbell
 Tags: widget,Post, posts, plugin, sidebar, links, page, random
 Requires at least: 2.1
