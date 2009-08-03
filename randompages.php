@@ -21,7 +21,7 @@ Plugin Name:Random Pages widget
 Plugin URI: http://bed-and-bedroom.com/random-pages-widget/
 Description: This is a widget that displays a list of random pages/posts on your widgetized sidebar.
 Author: Adam Bell	
-Version: 1.02
+Version: 1.021
 Author URI: http://bed-and-bedroom.com/
 */
 
