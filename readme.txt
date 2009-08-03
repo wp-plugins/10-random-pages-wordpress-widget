@@ -12,8 +12,15 @@ The widget displays random posts and pages in sidebar. This increases the number
 This is a widget that displays a list of random pages/posts on your widgetized sidebar. The widget displays random posts and pages in sidebar. This increases the number of indexed pages and gives users an interesting way to browse your site.
 
 Benefits:
-* Get more pages of site indexed
-**  by randomly spreading around links the chances a search engine spider fully index  your site greatly increases
+* Get more pages of your site indexed
+by randomly spreading around links the chances a search engine spider fully index  your site greatly increases
+* Give visitors a fun way to browse your site
+
+
+*Tip:* Find niches your blog should be covering
+By using this plug-in in combination with Google analytics you may find you get significant traffic for a topic your blog doesn't cover due to the added keywords from this widget.  
+
+For example, your entry on "Making a Carrot Cake" may contain a random link to "Making Tomato Soup" when it is cached by google.  Due to this, you start receiving traffic for the search term "Tomato Soup Cake" because of the presence of all those words on your post at the time of caching.  You have just identified a high value keyword which will give you guaranteed traffic if developed into a full post.
 
 
 == Installation ==
