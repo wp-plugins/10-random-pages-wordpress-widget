@@ -5,11 +5,15 @@ Requires at least: 2.1
 Tested up to: 2.8.1
 Stable tag: 1.00
 
-This Simple plugin is a widget that displays a list of random posts on your widgetized sidebar.
+The widget displays random posts and pages in sidebar. This increases the number of indexed pages and gives users an interesting way to browse your site.
 
 == Description ==
 
-This is a widget that displays a list of random pages/posts on your widgetized sidebar.
+This is a widget that displays a list of random pages/posts on your widgetized sidebar. The widget displays random posts and pages in sidebar. This increases the number of indexed pages and gives users an interesting way to browse your site.
+
+Benefits:
+* Get more pages of site indexed
+**  by randomly spreading around links the chances a search engine spider fully index  your site greatly increases
 
 
 == Installation ==
