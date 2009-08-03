@@ -12,6 +12,7 @@ The widget displays random posts and pages in sidebar. This increases the number
 This is a widget that displays a list of random pages/posts on your widgetized sidebar. The widget displays random posts and pages in sidebar. This increases the number of indexed pages and gives users an interesting way to browse your site.
 
 Benefits:
+
 * Get more pages of your site indexed
 by randomly spreading around links the chances a search engine spider fully index  your site greatly increases
 * Give visitors a fun way to browse your site
