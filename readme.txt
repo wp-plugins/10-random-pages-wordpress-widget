@@ -43,4 +43,4 @@ For example, your entry on "Making a Carrot Cake" may contain a random link to "
 * fixed Page count
 * added posts, pages or both configuration
 1.02
-* fixed hanging on draw widget
+* fixed hanging on drag widget
