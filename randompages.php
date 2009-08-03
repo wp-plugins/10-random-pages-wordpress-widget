@@ -17,12 +17,12 @@
 */
 
 /*
-Plugin Name: Random Pages widget
-Plugin URI: http://barristerbookcases.info/10-Random-Pages.html
-Description: Display Random Pages Widget.  Not Posts but Pages.  10 by default but configurable.
+Plugin Name:Random Pages widget
+Plugin URI: http://bed-and-bedroom.com/random-pages-widget/
+Description: This is a widget that displays a list of random pages/posts on your widgetized sidebar.
 Author: Adam Bell	
-Version: 1.00
-Author URI: http://barristerbookcases.info/
+Version: 1.01
+Author URI: http://bed-and-bedroom.com/
 */
 
 function random_pages($before,$after)
@@ -32,8 +32,8 @@ function random_pages($before,$after)
 	$title = $options['title'];
 	$list_type = $options['type'] ? $options['type'] : 'ul';
 	$numPosts = $options['count'];
-	if(is_null($v))
-		$numPosts = '10';
+	if(is_null($numPosts))
+		$numPosts = '5';
 	# Articles from database
 	$rand_articles	=	get_random_pages($numPosts);
 
@@ -65,15 +65,29 @@ function random_pages($before,$after)
 		$string_to_echo	.= '<a href="'.$rand_articles[$x]['permalink'].'">'.$rand_articles[$x]['title'].'</a>';
 		if (strlen($line_end) > 0) $string_to_echo .= $line_end;
 	}
-	$string_to_echo .= '<font size="-2">Get Plugin At <a href="http://www.barristerbookcases.info/10-Random-Pages.html">Barrister Bookcase</a></font>';
+	$string_to_echo .= '<font size="-5">Widget By <a target="_blank" style="text-decoration:none;" href="http://bed-and-bedroom.com/bedding/valance-bedding/">Valance Bedding</a></font>';
 	if (strlen($closing) > 0) $string_to_echo .= $closing;
 	return $string_to_echo;
 }
 
 function get_random_pages($numPosts) {
 	global $wpdb, $wp_db_version;
+	$options = (array) get_option('widget_randompages');
+	$posts = $options['posts'] ? $options['posts'] : 'both';
+	$sql = "";
+	switch($posts)
+	{
+		case "posts":
+			$sql = "SELECT $wpdb->posts.ID FROM $wpdb->posts WHERE $wpdb->posts.post_status = 'publish' AND $wpdb->posts.post_type = 'post'";	
+			break;
+		case "pages":
+			$sql = "SELECT $wpdb->posts.ID FROM $wpdb->posts WHERE $wpdb->posts.post_status = 'publish' AND $wpdb->posts.post_type = 'page'";	
+			break;
+		default:
+			$sql = "SELECT $wpdb->posts.ID FROM $wpdb->posts WHERE $wpdb->posts.post_status = 'publish' AND $wpdb->posts.post_type = 'page' OR $wpdb->posts.post_type = 'post'";	
 
-	$sql = "SELECT $wpdb->posts.ID FROM $wpdb->posts WHERE $wpdb->posts.post_status = 'publish' AND $wpdb->posts.post_type = 'page'";	
+	}
+	
 	$the_ids = $wpdb->get_results($sql);
 	$luckyPosts = (array) array_rand($the_ids,($numPosts > count($the_ids) ? count($the_ids) : $numPosts));
 
@@ -116,18 +130,29 @@ function widget_randompages_control() {
 		$newoptions['title'] = strip_tags(stripslashes($_POST['randompages-title']));
 		$newoptions['type'] = $_POST['randompages-type'];
 		$newoptions['count'] = (int) $_POST['randompages-count'];
+		$newoptions['posts'] = $_POST['randompages-posts'];
 	}
 	if ( $options != $newoptions ) {
 		$options = $newoptions;
 		update_option('widget_randompages', $options);
 	}
 	$list_type = $options['type'] ? $options['type'] : '<ul>';	
+	$posts = $options['posts'] ? $options['posts'] : 'both';
 
 	# Get categories from the database
 	$all_categories = get_categories();
 ?>			
 			<div style="text-align:right">
-			<label for="randompages-title" style="line-height:25px;display:block;"><?php _e('Widget title:', 'widgets'); ?> <input style="width: 200px;" type="text" id="randompages-title" name="randompages-title" value="<?php echo ($options['title'] ? wp_specialchars($options['title'], true) : 'Random Pages'); ?>" /></label>
+			<label for="randompages-title" style="line-height:25px;display:block;"><?php _e('Widget title:', 'widgets'); ?> 
+			<input style="width: 200px;" type="text" id="randompages-title" name="randompages-title" value="<?php echo ($options['title'] ? wp_specialchars($options['title'], true) : 'Random Pages'); ?>" /></label>
+			<label for="randompages-posts" style="line-height:25px;display:block;">
+				<?php _e('Pages Or Posts:', 'widgets'); ?>
+					<select style="width: 200px;" id="randompages-posts" name="randompages-posts">
+						<option value="both"<?php if ($options['posts'] == 'both') echo ' selected' ?>>both</option>
+						<option value="posts"<?php if ($options['posts'] == 'posts') echo ' selected' ?>>posts</option>
+						<option value="pages"<?php if ($options['posts'] == 'pages') echo ' selected' ?>>pages</option>
+					</select>
+			</label>
 			<label for="randompages-type" style="line-height:25px;display:block;">
 				<?php _e('List Type:', 'widgets'); ?>
 					<select style="width: 200px;" id="randompages-type" name="randompages-type">
@@ -140,7 +165,7 @@ function widget_randompages_control() {
 				<?php _e('Page count:', 'widgets'); ?>
 					<select style="width: 200px;" id="randompages-count" name="randompages-count"/>
 						<?php for($cnt=1;$cnt<=10;$cnt++): ?>
-							<option value="<?php echo $cnt ?>"<?php if($cnt == 10) echo ' selected' ?>><?php echo $cnt ?></option>
+							<option value="<?php echo $cnt ?>"<?php if($cnt == $options['count']) echo ' selected' ?>><?php echo $cnt ?></option>
 						<?php endfor; ?>
 					</select>
 			</label>			
@@ -168,7 +193,7 @@ function widget_randompages_init() {
 		echo random_pages($before_title, $after_title);
 		echo $after_widget;
 		$end = microtime_float();
-		echo "\n".'<!-- Time taken for the 2 queries to complete is '.($end - $start).' seconds -->'."\n";
+		echo "\n".'<!--query time: '.($end - $start).' seconds -->'."\n";
 	}
 
 	// Tell Dynamic Sidebar about our new widget and its control
