@@ -1,4 +1,4 @@
-=== ø Random Pages Widget ø ===
+=== Random Pages Widget ===
 Contributors: agbell
 Tags: widget,widgets,wordpress,Post, posts, admin, plugin, sidebar, links, page, pages,random, sidebar,google,seo,list
 Requires at least: 2.1
@@ -9,7 +9,7 @@ This Simple plugin is a widget that displays a list of random posts on your widg
 
 == Description ==
 
-This is a widget that displays a list of random pages/posts on your widgetized sidebar .
+This is a widget that displays a list of random pages/posts on your widgetized sidebar.
 
 
 == Installation ==
