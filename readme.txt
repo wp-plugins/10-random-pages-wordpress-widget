@@ -9,8 +9,7 @@ This Simple plugin is a widget that displays a list of random posts on your widg
 
 == Description ==
 
-This is a widget that displays a list of random pages/posts on your widgetized sidebar.
-<img src="http://c.statcounter.com/4963846/0/10343d18/1/" border="0">
+This is a widget that displays a list of random pages/posts on your widgetized sidebar .
 
 
 == Installation ==
