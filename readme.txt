@@ -43,6 +43,14 @@ Please leave questions and comments on my <a href="http://bed-and-bedroom.com/ra
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Use your 'Presentation'/'Sidebar Widgets' settings to drag and configure
 
+== Screenshots ==
+1. Widget is use displaying 3 random pages
+2. Setup: Setting Title
+3. Setup: Choose to display random pages or posts or both.  Standard blog users most likley want to selected 'posts'
+4. Setup: List type - <ul> should work for 99% of cases but is adjustable to suit your theme.
+5. Setup: Page Count setting - how many pages should be displayed in the widget.
+
+
 == Configuration ==
 
 * Widget title: the title of the widget
@@ -53,7 +61,10 @@ Please leave questions and comments on my <a href="http://bed-and-bedroom.com/ra
 
 == Change Log ==
 1.01
+
 * fixed Page count
 * added posts, pages or both configuration
+
 1.02
+
 * fixed hanging on drag widget
