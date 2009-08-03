@@ -1,4 +1,4 @@
-=== Random Pages Widget ===
+=== Random Pages Widget - For Vistors & SEO ===
 Contributors: agbell
 Tags: widget,widgets,wordpress,Post, posts, admin, plugin, sidebar, links, page, pages,random, sidebar,google,seo,list
 Requires at least: 2.1
