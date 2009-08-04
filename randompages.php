@@ -21,7 +21,7 @@ Plugin Name:Random Pages widget
 Plugin URI: http://bed-and-bedroom.com/random-pages-widget/
 Description: This is a widget that displays a list of random pages/posts on your widgetized sidebar.
 Author: Adam Bell	
-Version: 1.021
+Version: 1.02
 Author URI: http://bed-and-bedroom.com/
 */
 
@@ -65,7 +65,7 @@ function random_pages($before,$after)
 		$string_to_echo	.= '<a href="'.$rand_articles[$x]['permalink'].'">'.$rand_articles[$x]['title'].'</a>';
 		if (strlen($line_end) > 0) $string_to_echo .= $line_end;
 	}
-	$string_to_echo .= '<font size="-5">Widget By <a target="_blank" style="text-decoration:none;" href="http://bed-and-bedroom.com/bedding/valance-bedding/">Valance Bedding</a></font>';
+	$string_to_echo .= '<font size="-5">Plugin By <a target="_blank" style="text-decoration:none;" href="http://bed-and-bedroom.com/duvet/king-size-duvet/">King Size Duvet</a></font>';
 	if (strlen($closing) > 0) $string_to_echo .= $closing;
 	return $string_to_echo;
 }
@@ -138,6 +138,8 @@ function widget_randompages_control() {
 	}
 	$list_type = $options['type'] ? $options['type'] : '<ul>';	
 	$posts = $options['posts'] ? $options['posts'] : 'both';
+	if(is_null($options['count']))
+		$options['count'] = '3';
 
 	# Get categories from the database
 	$all_categories = get_categories();
