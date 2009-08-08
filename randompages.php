@@ -32,7 +32,7 @@ function random_pages($before,$after)
 	$title = $options['title'];
 	$list_type = $options['type'] ? $options['type'] : 'ul';
 	$numPosts = $options['count'];
-	if(is_null($numPosts))
+	if(is_null($numPosts) || $numPosts == 0)
 		$numPosts = '5';
 	# Articles from database
 	$rand_articles	=	get_random_pages($numPosts);
@@ -65,6 +65,16 @@ function random_pages($before,$after)
 		$string_to_echo	.= '<a href="'.$rand_articles[$x]['permalink'].'">'.$rand_articles[$x]['title'].'</a>';
 		if (strlen($line_end) > 0) $string_to_echo .= $line_end;
 	}
+	//Attention Plugin Users
+	// The following line ads a link for my website to this widget
+	// I ask for no donations for this plugin, all that I ask is that
+	// if at all possible you leave this link in place, so that I recieve
+	// credit where credit is due.  Giving me credit will encourage me
+	// to continue to delevlop this plugin and others.  If it is 
+	// not possible to include this link, I would be happy to have a 
+	// shout out to my plugin included in a post or footer or blogroll
+	// link.  To remove the link comment out the line below
+	// Adam Bell
 	$string_to_echo .= '<font size="-5">Plugin By <a target="_blank" style="text-decoration:none;" href="http://bed-and-bedroom.com/duvet/king-size-duvet/">King Size Duvet</a></font>';
 	if (strlen($closing) > 0) $string_to_echo .= $closing;
 	return $string_to_echo;
@@ -78,49 +88,56 @@ function get_random_pages($numPosts) {
 	switch($posts)
 	{
 		case "posts":
-			$sql = "SELECT $wpdb->posts.ID FROM $wpdb->posts WHERE $wpdb->posts.post_status = 'publish' AND $wpdb->posts.post_type = 'post'";	
+			$sql = "SELECT $wpdb->posts.ID FROM $wpdb->posts WHERE $wpdb->posts.post_status = 'publish' AND $wpdb->posts.post_type = 'post' AND CURRENT_TIMESTAMP > $wpdb->posts.post_date";	
 			break;
 		case "pages":
-			$sql = "SELECT $wpdb->posts.ID FROM $wpdb->posts WHERE $wpdb->posts.post_status = 'publish' AND $wpdb->posts.post_type = 'page'";	
+			$sql = "SELECT $wpdb->posts.ID FROM $wpdb->posts WHERE $wpdb->posts.post_status = 'publish' AND $wpdb->posts.post_type = 'page'  AND CURRENT_TIMESTAMP > $wpdb->posts.post_date";	
 			break;
 		default:
-			$sql = "SELECT $wpdb->posts.ID FROM $wpdb->posts WHERE $wpdb->posts.post_status = 'publish' AND $wpdb->posts.post_type = 'page' OR $wpdb->posts.post_type = 'post'";	
+			$sql = "SELECT $wpdb->posts.ID FROM $wpdb->posts WHERE $wpdb->posts.post_status = 'publish' AND $wpdb->posts.post_type = 'page' OR $wpdb->posts.post_type = 'post'  AND CURRENT_TIMESTAMP > $wpdb->posts.post_date";	
 
 	}
-	
 	$the_ids = $wpdb->get_results($sql);
-	$luckyPosts = (array) array_rand($the_ids,($numPosts > count($the_ids) ? count($the_ids) : $numPosts));
-
-	$sql = "SELECT $wpdb->posts.post_title, $wpdb->posts.ID";
-	$sql .=	" FROM $wpdb->posts";
-	$sql .=	" WHERE";
-	# Here we minimize number of query to the database by using ORs - just one query needed
-	foreach ($luckyPosts as $id)
+	$count = ($numPosts > count($the_ids) ? count($the_ids) : $numPosts);
+	if($count == 0)
 	{
-		if($notfirst) $sql .= " OR";
-		else $sql .= " (";
-		$sql .= " $wpdb->posts.ID = ".$the_ids[$id]->ID;
-		$notfirst = true;
-	}
-	$sql .= ')';
-	$rand_articles = $wpdb->get_results($sql);
-
-	# Give it a shuffle just to spice it up
-	shuffle($rand_articles);
-
-	if ($rand_articles)
-	{
-		foreach ($rand_articles as $item)
-		{
-			$posts_results[] = array('title'=>str_replace('"','',stripslashes($item->post_title)),
-			 					'permalink'=>post_permalink($item->ID)
-								);
-		}
-		return $posts_results;
+		return false;
 	}
 	else
 	{
-		return false;
+		$luckyPosts = (array) array_rand($the_ids,$count);
+	
+		$sql = "SELECT $wpdb->posts.post_title, $wpdb->posts.ID";
+		$sql .=	" FROM $wpdb->posts";
+		$sql .=	" WHERE";
+		# Here we minimize number of query to the database by using ORs - just one query needed
+		foreach ($luckyPosts as $id)
+		{
+			if($notfirst) $sql .= " OR";
+			else $sql .= " (";
+			$sql .= " $wpdb->posts.ID = ".$the_ids[$id]->ID;
+			$notfirst = true;
+		}
+		$sql .= ')';
+		$rand_articles = $wpdb->get_results($sql);
+	
+		# Give it a shuffle just to spice it up
+		shuffle($rand_articles);
+	
+		if ($rand_articles)
+		{
+			foreach ($rand_articles as $item)
+			{
+				$posts_results[] = array('title'=>str_replace('"','',stripslashes($item->post_title)),
+									'permalink'=>post_permalink($item->ID)
+									);
+			}
+			return $posts_results;
+		}
+		else
+		{
+			return false;
+		}
 	}
 }
 
@@ -165,7 +182,7 @@ function widget_randompages_control() {
 			</label>
 			<label for="randompages-count" style="line-height:25px;display:block;">
 				<?php _e('Page count:', 'widgets'); ?>
-					<select style="width: 200px;" id="randompages-count" name="randompages-count"/>
+					<select style="width: 200px;" id="randompages-count" name="randompages-count">
 						<?php for($cnt=1;$cnt<=10;$cnt++): ?>
 							<option value="<?php echo $cnt ?>"<?php if($cnt == $options['count']) echo ' selected' ?>><?php echo $cnt ?></option>
 						<?php endfor; ?>
