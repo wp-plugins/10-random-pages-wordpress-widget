@@ -17,11 +17,7 @@ Benefits:
 * Get more pages of your site indexed.
 * By randomly spreading around links the chances a search engine spider fully index  your site greatly increases.
 * Increase traffic from the search engines due to having more pages indexed (see last point).
-* Discover new keyphrases that will drive huge traffic to you site.
-
-
-**Tip:** < href="http://bed-and-bedroom.com/discovering-new-keyphrases-for-search-engine-traffic/">Discovering new keyphrases for search engine traffic</a>
-
+*  <a href="http://bed-and-bedroom.com/discovering-new-keyphrases-for-search-engine-traffic/">Discover new keyphrases that will drive huge traffic to you site.</a>
 
 **Questions, Comments and feature suggestions**
 
@@ -63,3 +59,7 @@ Please leave questions and comments on my <a href="http://bed-and-bedroom.com/ra
 
 * fixed bug with having only 1 post
 * fixed to work for 2.8.2 (please upgrade to 2.8.3 however, it works better)
+
+Known Issues:
+* won't work with broken-link-checker plugin
+* drop downs hard to select in version 2.8.2 of wordpress .  Please hold down mouse button or upgrade wordpress.
