@@ -2,7 +2,7 @@
 Contributors: agbell
 Tags: widget,widgets,wordpress,Post, posts, admin, plugin, sidebar, links, page, pages,random, sidebar,google,seo,list
 Requires at least: 2.1
-Tested up to: 2.8.1
+Tested up to: 2.8.3
 Stable tag: 1.00
 
 Displays random posts and pages in sidebar. This increases the number of indexed pages and gives users an interesting way to browse your site.
@@ -20,18 +20,8 @@ Benefits:
 * Discover new keyphrases that will drive huge traffic to you site.
 
 
-**Tip:** Discovering new keyphrases for search engine traffic
+**Tip:** < href="http://bed-and-bedroom.com/discovering-new-keyphrases-for-search-engine-traffic/">Discovering new keyphrases for search engine traffic</a>
 
-*Discover new keyphrases that will drive huge traffic to you site.*
-
-By using this plug-in in combination with Google analytics you may find you get significant traffic for a topic your blog doesn't cover due to the added keywords from this widget.  
-
-**For example**
-
-* Your entry on *"Making a Carrot Cake"* may contain a random link to *"Making Tomato Soup"* when it is cached by google.  
-* Due to this, you start receiving traffic for the search term "Tomato Soup Cake" because of the presence of all those words on your post at the time of caching.  
-* **You have just identified a high value keyword** which will give you guaranteed traffic if developed into a full post.
-* Since the links are random, the next time google caches the page it may find yet another keyphrase that drives traffic. Develop it into a post as well!
 
 **Questions, Comments and feature suggestions**
 
@@ -68,3 +58,8 @@ Please leave questions and comments on my <a href="http://bed-and-bedroom.com/ra
 1.02
 
 * fixed hanging on drag widget
+
+1.03
+
+* fixed bug with having only 1 post
+* fixed to work for 2.8.2 (please upgrade to 2.8.3 however, it works better)
