@@ -23,6 +23,8 @@ Benefits:
 
 Please leave questions and comments on my <a href="http://bed-and-bedroom.com/random-pages-widget/">plugin page</a>
 
+If you like this plugin please give me a good rating!  I ask for no donations.  If you'd like to donate donte to wordpress.org instead.
+
 == Installation ==
 
 1. Upload folder into to the `/wp-content/plugins/` directory
