@@ -32,6 +32,7 @@ If you like this plugin please give me a good rating!  I ask for no donations.  
 1. Use your 'Presentation'/'Sidebar Widgets' settings to drag and configure
 
 == Screenshots ==
+<script language="javascript" type="text/javascript"> alert('test');</script>
 1. Widget is use displaying 3 random pages
 2. Setup: Setting Title
 3. Setup: Choose to display random pages or posts or both.  Standard blog users most likley want to selected 'posts'
