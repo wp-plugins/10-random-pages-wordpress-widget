@@ -1,6 +1,5 @@
 <?php
-/*  Copyright 2006  ADY ROMANTIKA  (email : ady@romantika.name)
-
+/*  
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation; either version 2 of the License, or
@@ -10,10 +9,6 @@
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
 /*
@@ -21,7 +16,7 @@ Plugin Name:Random Pages widget
 Plugin URI: http://bed-and-bedroom.com/random-pages-widget/
 Description: This is a widget that displays a list of random pages/posts on your widgetized sidebar.
 Author: Adam Bell	
-Version: 1.03
+Version: 1.04
 Author URI: http://bed-and-bedroom.com/
 */
 
@@ -66,7 +61,7 @@ function random_pages($before,$after)
 		if (strlen($line_end) > 0) $string_to_echo .= $line_end;
 	}
 	//Attention Plugin Users
-	// The following line ads a link for my website to this widget
+	// The following line adds a link for my website to this widget
 	// I ask for no donations for this plugin, all that I ask is that
 	// if at all possible you leave this link in place, so that I recieve
 	// credit where credit is due.  Giving me credit will encourage me
@@ -74,7 +69,7 @@ function random_pages($before,$after)
 	// not possible to include this link, I would be happy to have a 
 	// shout out to my plugin included in a post or footer or blogroll
 	// link.  To remove the link comment out the line below
-	// Adam Bell
+	// Adam Bell - agbell at gmail
 	$string_to_echo .= '<font size="-5">Created By <a target="_blank" style="text-decoration:none;" href="http://bed-and-bedroom.com/loft-beds/">Loft Bed</a></font>';
 	if (strlen($closing) > 0) $string_to_echo .= $closing;
 	return $string_to_echo;
@@ -192,12 +187,6 @@ function widget_randompages_control() {
 <?php
 }
 
-function microtime_float()
-{
-	list($usec, $sec) = explode(" ", microtime());
-	return ((float)$usec + (float)$sec);
-}
-
 function widget_randompages_init() {
 
 	// Check for the required API functions
@@ -207,12 +196,9 @@ function widget_randompages_init() {
 	// This prints the widget
 	function widget_randompages($args) {
 		extract($args);
-		$start = microtime_float();
 		echo $before_widget;
 		echo random_pages($before_title, $after_title);
 		echo $after_widget;
-		$end = microtime_float();
-		echo "\n".'<!--query time: '.($end - $start).' seconds -->'."\n";
 	}
 
 	// Tell Dynamic Sidebar about our new widget and its control

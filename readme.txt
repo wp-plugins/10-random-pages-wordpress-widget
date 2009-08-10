@@ -59,7 +59,11 @@ Please leave questions and comments on my <a href="http://bed-and-bedroom.com/ra
 
 * fixed bug with having only 1 post
 * fixed to work for 2.8.2 (please upgrade to 2.8.3 however, it works better)
+* will not showed scheduled tasks
 
-Known Issues:
-* won't work with broken-link-checker plugin
-* drop downs hard to select in version 2.8.2 of wordpress .  Please hold down mouse button or upgrade wordpress.
+1.04
+* now works with broken-link-checker plugin
+
+Known Issues: 
+
+* version 2.8.2 of wordpress + firefox make it hard to setup this widget from he admin panel - upgrade wordpress OR try another browser
