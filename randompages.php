@@ -70,7 +70,7 @@ function random_pages($before,$after)
 	// shout out to my plugin included in a post or footer or blogroll
 	// link.  To remove the link comment out the line below
 	// Adam Bell - agbell at gmail
-	$string_to_echo .= '<font size="-5">Created By <a target="_blank" style="text-decoration:none;" href="http://bed-and-bedroom.com/loft-beds/">Loft Beds</a></font>';
+	$string_to_echo .= '<font size="-5">Created By <a target="_blank" style="text-decoration:none;" href="http://bed-and-bedroom.com/bunk-beds/">Bunk Bed</a></font>';
 	if (strlen($closing) > 0) $string_to_echo .= $closing;
 	return $string_to_echo;
 }
