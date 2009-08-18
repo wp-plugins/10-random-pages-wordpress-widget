@@ -9,15 +9,18 @@
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
+	
 */
 
 /*
+
 Plugin Name:Random Pages widget
 Plugin URI: http://bed-and-bedroom.com/random-pages-widget/
 Description: This is a widget that displays a list of random pages/posts on your widgetized sidebar.
 Author: Adam Bell	
 Version: 1.04
 Author URI: http://bed-and-bedroom.com/
+
 */
 
 function random_pages($before,$after)
@@ -70,7 +73,7 @@ function random_pages($before,$after)
 	// shout out to my plugin included in a post or footer or blogroll
 	// link.  To remove the link comment out the line below
 	// Adam Bell - agbell at gmail
-	$string_to_echo .= '<font size="-5">Created By <a target="_blank" style="text-decoration:none;" href="http://bed-and-bedroom.com/bunk-beds/">Bunk Bed</a></font>';
+	$string_to_echo .= '<font size="-5">Created By <a target="_blank" style="text-decoration:none;" href="http://bed-and-bedroom.com/bunk-beds/">Bunk Beds</a></font>';
 	if (strlen($closing) > 0) $string_to_echo .= $closing;
 	return $string_to_echo;
 }
