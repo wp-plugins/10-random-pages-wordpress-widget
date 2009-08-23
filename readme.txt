@@ -43,9 +43,10 @@ If you like this plugin please give me a good rating!  I ask for no donations.  
 == Configuration ==
 
 * Widget title: the title of the widget
+* Pages Or Posts: display random pages or random posts or both
 * List types: ul for bulleted list, p for paragraph, br for paragraph with line breaks
 * Page count: Number of random pages you would like to be displayed
-* Category: Only this category will be selected as the source
+
 
 
 == Change Log ==
