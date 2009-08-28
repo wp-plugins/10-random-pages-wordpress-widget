@@ -17,11 +17,11 @@ Benefits:
 * Get more pages of your site indexed.
 * By randomly spreading around links the chances a search engine spider fully index  your site greatly increases.
 * Increase traffic from the search engines due to having more pages indexed (see last point).
-*  <a href="http://bed-and-bedroom.com/discovering-new-keyphrases-for-search-engine-traffic/">Discover new keyphrases that will drive huge traffic to you site.</a>
+*  <a href="http://bunkandloftbeds.com/discovering-new-keyphrases-for-search-engine-traffic/">Discover new keyphrases that will drive huge traffic to you site.</a>
 
 **Questions, Comments and feature suggestions**
 
-Please leave questions and comments on my <a href="http://bed-and-bedroom.com/random-pages-widget/">plugin page</a>
+Please leave questions and comments on my <a href="http://bunkandloftbeds.com/random-pages-widget/">plugin page</a>
 
 If you like this plugin please give me a good rating!  I ask for no donations.  If you'd like to donate, donate to wordpress.org.
 

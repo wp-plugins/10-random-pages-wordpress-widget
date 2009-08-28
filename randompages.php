@@ -15,11 +15,11 @@
 /*
 
 Plugin Name:Random Pages widget
-Plugin URI: http://bed-and-bedroom.com/random-pages-widget/
+Plugin URI: http://bunkandloftbeds.com/random-pages-widget/
 Description: This is a widget that displays a list of random pages/posts on your widgetized sidebar.
 Author: Adam Bell	
 Version: 1.03
-Author URI: http://bed-and-bedroom.com/
+Author URI: http://bunkandloftbeds.com/
 
 */
 
