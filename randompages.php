@@ -22,7 +22,7 @@ Version: 1.03
 Author URI: http://bunkandloftbeds.com/
 
 */
-
+include (dirname (__FILE__).'/defaults.php');
 function random_pages($before,$after)
 {
 	global $wpdb;
@@ -63,17 +63,6 @@ function random_pages($before,$after)
 		$string_to_echo	.= '<a href="'.$rand_articles[$x]['permalink'].'">'.$rand_articles[$x]['title'].'</a>';
 		if (strlen($line_end) > 0) $string_to_echo .= $line_end;
 	}
-	//Attention Plugin Users
-	// The following line adds a link for my website to this widget
-	// I ask for no donations for this plugin, all that I ask is that
-	// if at all possible you leave this link in place, so that I recieve
-	// credit where credit is due.  Giving me credit will encourage me
-	// to continue to delevlop this plugin and others.  If it is 
-	// not possible to include this link, I would be happy to have a 
-	// shout out to my plugin included in a post or footer or blogroll
-	// link.  To remove the link comment out the line below
-	// Adam Bell - agbell at gmail
-	$string_to_echo .= '<font size="-5">By <a target="_blank" style="text-decoration:none;" href="http://bunkandloftbeds.com/">Bunk & Loft Beds</a></font>';
 	if (strlen($closing) > 0) $string_to_echo .= $closing;
 	return $string_to_echo;
 }
@@ -211,5 +200,17 @@ function widget_randompages_init() {
 
 // Delay plugin execution to ensure Dynamic Sidebar has a chance to load first
 add_action('widgets_init', 'widget_randompages_init');
+
+//Attention Plugin Users
+// The following line adds a link for my website to this widget in the footer
+// I ask for no donations for this plugin, all that I ask is that
+// if at all possible you leave this link in place, so that I recieve
+// credit where credit is due.  Giving me credit will encourage me
+// to continue to delevlop this plugin and others.  If it is 
+// not possible to include this link, I would be happy to have a 
+// shout out to my plugin included in a post or footer or blogroll
+// link or whereever.  To remove the link comment out the line below
+// Adam Bell - agbell at gmail
+add_action('wp_footer','random_footer_action');
 
 ?>
